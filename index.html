@@ -33,9 +33,6 @@
     .actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
     .button { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 44px; padding: 10px 18px; border: 1px solid var(--ink); border-radius: 6px; background: var(--ink); color: #fff; font-size: 13px; font-weight: 600; transition: background .15s ease; }
     .button:hover { background: #24594f; }
-    .button.secondary { border-color: var(--line); background: transparent; color: var(--ink); }
-    .button.secondary:hover { background: var(--soft); }
-    .button svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
     .draft-bar { position: sticky; top: 0; z-index: 5; display: flex; justify-content: space-between; align-items: center; gap: 10px 20px; flex-wrap: wrap; padding: 13px 0; background: rgb(245 244 238 / .98); border-bottom: 1px solid var(--line); color: var(--muted); font-size: 12px; }
     .draft-bar output { color: var(--ink); font-weight: 650; }
@@ -51,18 +48,13 @@
     .question.has-answer .question-number { color: var(--ink); }
     .question.is-missing .answer-fieldset { border-left: 3px solid #9e501b; padding-left: 12px; }
     .question-error { margin: 7px 0 0 !important; color: #914715 !important; font-size: 12px !important; }
-    .print-answer { display: none; }
     .answer-actions { margin-top: 35px; padding: 27px 28px; background: var(--ink); color: white; border-radius: 8px; }
     .answer-actions h2 { color: white; font-size: 28px; }
     .answer-actions p { margin: 12px 0 0; color: #c3d3c6; font-size: 14px; line-height: 1.7; }
     .answer-actions .actions { margin-top: 20px; }
     .answer-actions .button { background: var(--gold); color: var(--ink); border-color: var(--gold); }
     .answer-actions .button:hover { background: #f0e2bf; }
-    .answer-actions .button.secondary { color: white; background: transparent; border-color: #739082; }
-    .answer-actions .button.secondary:hover { background: #23574b; }
     .button:disabled { opacity: .5; cursor: not-allowed; }
-    .export-actions { display: flex; gap: 16px 20px; flex-wrap: wrap; margin-top: 15px; }
-    .text-button { padding: 4px 0; border: 0; background: transparent; color: #d3dfd4; text-decoration: underline; text-underline-offset: 4px; font-size: 12px; }
     .submit-status { min-height: 22px; }
     .contents { display: flex; flex-wrap: wrap; gap: 10px 26px; padding-block: 20px; border-block: 1px solid var(--line); }
     .contents a { display: inline-flex; align-items: baseline; gap: 9px; font-size: 13px; text-decoration: none; }
@@ -83,12 +75,6 @@
     .answer-hint p { margin: 9px 0 0; color: #4a6255; font-size: 14px; line-height: 1.75; }
     footer { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-top: 50px; padding-block: 24px 36px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; }
     footer a { color: var(--muted); }
-    dialog { width: min(100% - 32px, 670px); max-height: 85vh; padding: 25px; border: 1px solid var(--line); border-radius: 10px; background: var(--paper); color: var(--text); }
-    dialog::backdrop { background: rgb(15 38 32 / .55); }
-    dialog h2 { font-size: 25px; }
-    dialog p { color: var(--muted); font-size: 14px; }
-    dialog textarea { display: block; width: 100%; min-height: 230px; max-height: 45vh; resize: vertical; padding: 12px; border: 1px solid #84968b; border-radius: 4px; background: #fff; color: var(--text); font-size: 14px; line-height: 1.6; }
-    dialog .button { margin-top: 16px; }
     [hidden] { display: none !important; }
     @media (max-width: 600px) {
       .wrap { width: min(100% - 36px, 920px); }
@@ -113,7 +99,7 @@
       .question-number { font-size: 21px; }
       h3 { font-size: 17px; line-height: 1.5; }
       .question p { font-size: 14px; line-height: 1.7; }
-      .answer-text, dialog textarea { font-size: 16px; }
+      .answer-text { font-size: 16px; }
       .answer-hint { margin-top: 33px; padding: 20px; }
       .draft-bar { font-size: 11px; padding-block: 11px; }
       .answer-actions { padding: 23px 20px; }
@@ -121,25 +107,6 @@
       footer { margin-top: 35px; }
     }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; } }
-    @media print {
-      body { background: white; color: black; font-size: 11pt; line-height: 1.5; }
-      .wrap { width: 100%; max-width: none; }
-      .masthead { padding-block: 0 16px; }
-      .intro { padding-block: 24px 10px; }
-      h1 { font-size: 32pt; letter-spacing: -.8px; }
-      .lead { max-width: none; font-size: 11pt; }
-      .actions, .contents, .skip, .answer-hint, .answer-actions, .answer-fieldset, .draft-bar, dialog, footer a { display: none !important; }
-      .print-answer { display: block; white-space: pre-line; margin-top: 10px; font-size: 10.5pt; color: black; }
-      .question-section { padding-top: 24px; }
-      h2 { font-size: 20pt; }
-      h3 { font-size: 12pt; }
-      .question { padding-block: 15px; grid-template-columns: 35px minmax(0, 1fr); }
-      .question p { font-size: 10.5pt; }
-      .question-number { font-size: 17pt; }
-      footer { padding-bottom: 0; margin-top: 25px; }
-      a { color: inherit; }
-      @page { margin: 18mm; }
-    }
   </style>
 </head>
 <body>
@@ -158,12 +125,6 @@
         <h1 id="page-title">Согласуем<br>следующую версию</h1>
         <p class="lead">Денис, ниже — вопросы по материалам, учебным тестам и обновлениям приложения. Ответы помогут определить, как должна работать следующая версия.</p>
         <p class="lead">Ответьте прямо на странице: выберите подходящие варианты и добавьте пояснения. Если решения пока нет — можно написать «нужен совет». Черновик сохраняется на этом устройстве.</p>
-        <div class="actions">
-          <button class="button secondary" type="button" id="print-page">
-            <svg aria-hidden="true" viewBox="0 0 20 20"><path d="M5 7V2h10v5M5 14H2V7h16v7h-3M5 11h10v7H5z"/></svg>
-            Печать / PDF
-          </button>
-        </div>
       </section>
       <nav class="contents" aria-label="Темы вопросов" id="questions">
         <a href="#tests"><span class="toc-range">01—06</span><span class="toc-label">Учебные тесты</span></a>
@@ -205,14 +166,9 @@
       </section>
       <section class="answer-actions" aria-labelledby="answers-heading">
         <h2 id="answers-heading">Ваши ответы</h2>
-        <p id="delivery-note">Черновик хранится в этом браузере. Ответы сохранятся в закрытой базе и будут доступны разработчику. При необходимости можно также скачать или скопировать ответы.</p>
+        <p>Черновик хранится в этом браузере. После отправки ответы сохранятся в закрытой базе и будут доступны разработчику.</p>
         <div class="actions">
           <button class="button" type="submit" id="submit-answers" disabled>Отправить ответы</button>
-          <button class="button secondary" type="button" id="share-answers">Поделиться ответами</button>
-        </div>
-        <div class="export-actions">
-          <button class="text-button" type="button" id="copy-answers">Скопировать ответы</button>
-          <button class="text-button" type="button" id="download-answers">Скачать .txt</button>
         </div>
         <p class="submit-status" id="submit-status" role="status" aria-live="polite"></p>
       </section>
@@ -224,19 +180,10 @@
     </main>
     <footer><span>Валютный контроль · Вопросы для согласования</span><a href="#top">К началу ↑</a></footer>
   </div>
-  <dialog id="copy-dialog" aria-labelledby="copy-dialog-title">
-    <h2 id="copy-dialog-title">Скопировать вручную</h2>
-    <p id="manual-help">Браузер не разрешил автоматическое копирование. Выделите текст ниже и скопируйте его обычным способом.</p>
-    <textarea id="manual-copy" readonly aria-label="Текст для копирования" aria-describedby="manual-help"></textarea>
-    <button class="button secondary" type="button" id="close-dialog">Закрыть</button>
-  </dialog>
   <script src="form-config.js"></script>
   <script>
     (() => {
       'use strict';
-      const copyButton = document.getElementById('copy-answers');
-      const dialog = document.getElementById('copy-dialog');
-      const manual = document.getElementById('manual-copy');
       const form = document.getElementById('answer-form');
       const configs = [
         {type:'checkbox', options:['Валютный контроль', 'Бартер', 'Наличные и денежные инструменты через границу', 'ПОД/ФТ']},
@@ -294,17 +241,14 @@
         error.textContent = 'Выберите вариант или напишите короткий ответ.';
         error.hidden = true;
         textarea.setAttribute('aria-describedby', error.id);
-        const printAnswer = document.createElement('div');
-        printAnswer.className = 'print-answer';
         fieldset.append(textLabel, textarea, error);
-        item.lastElementChild.append(fieldset, printAnswer);
+        item.lastElementChild.append(fieldset);
       });
       const storageKey = 'denis-currency-control-questions:v1';
       const progress = document.getElementById('answer-progress');
       const draftStatus = document.getElementById('draft-status');
       const submitStatus = document.getElementById('submit-status');
       const submitButton = document.getElementById('submit-answers');
-      const deliveryNote = document.getElementById('delivery-note');
       const config = window.DENIS_QUESTIONS_CONFIG || {};
       let saveTimer;
       let storageWorking = true;
@@ -330,7 +274,6 @@
         updateSubmitAvailability(count);
         questionNodes.forEach((item, index) => {
           item.classList.toggle('has-answer', Boolean(answers[index].answer));
-          item.querySelector('.print-answer').textContent = answers[index].answer ? `Ответ:\n${answers[index].answer}` : 'Ответ пока не указан.';
           if (answers[index].answer) {
             item.classList.remove('is-missing');
             item.querySelector('.question-error').hidden = true;
@@ -349,7 +292,7 @@
           draftStatus.textContent = updateProgress() ? 'Черновик сохранён на этом устройстве' : 'Черновик пока пуст';
         } catch (_) {
           storageWorking = false;
-          draftStatus.textContent = 'Браузер не сохранил черновик. Скопируйте или скачайте ответы перед закрытием.';
+          draftStatus.textContent = 'Браузер не сохранил черновик. Не закрывайте страницу до отправки ответов.';
         }
       };
       try {
@@ -374,7 +317,7 @@
         }
       } catch (_) {
         storageWorking = false;
-        draftStatus.textContent = 'Автосохранение в этом браузере недоступно. Можно скачать ответы файлом.';
+        draftStatus.textContent = 'Автосохранение в этом браузере недоступно. Не закрывайте страницу до отправки ответов.';
       }
       if (updateProgress() && storageWorking) draftStatus.textContent = 'Черновик восстановлен на этом устройстве';
       form.addEventListener('input', () => {
@@ -385,70 +328,6 @@
       });
       form.addEventListener('change', () => { updateProgress(); clearTimeout(saveTimer); saveDraft(); });
       window.addEventListener('pagehide', saveDraft);
-      const answersText = () => 'Валютный контроль — ответы Дениса\n\n' + readAnswers().map(answer =>
-        `${answer.number}. ${answer.question}\n${answer.answer || 'Ответ пока не указан.'}`).join('\n\n');
-      const copyText = async (text, successMessage) => {
-        let copied = false;
-        copyButton.disabled = true;
-        try {
-          if (navigator.clipboard && window.isSecureContext) {
-            await navigator.clipboard.writeText(text);
-            copied = true;
-          }
-        } catch (_) { /* Continue with a browser-local fallback. */ }
-        if (!copied) {
-          const field = document.createElement('textarea');
-          field.value = text;
-          field.setAttribute('readonly', '');
-          field.style.cssText = 'position:fixed;left:-9999px;top:0;';
-          document.body.appendChild(field);
-          field.select();
-          try { copied = document.execCommand('copy'); } catch (_) { copied = false; }
-          field.remove();
-          copyButton.focus();
-        }
-        copyButton.disabled = false;
-        if (copied) {
-          submitStatus.textContent = successMessage;
-        } else {
-          manual.value = text;
-          if (typeof dialog.showModal === 'function') {
-            dialog.showModal();
-          } else {
-            dialog.setAttribute('open', '');
-            dialog.scrollIntoView({ block: 'center' });
-          }
-          manual.focus();
-          manual.select();
-          submitStatus.textContent = 'Доступно ручное копирование текста.';
-        }
-      };
-      document.getElementById('copy-answers').addEventListener('click', () => copyText(answersText(), 'Ответы скопированы. Теперь их можно вставить в сообщение.'));
-      document.getElementById('download-answers').addEventListener('click', () => {
-        const url = URL.createObjectURL(new Blob(['\uFEFF' + answersText()], {type:'text/plain;charset=utf-8'}));
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = 'otvety-denisa-valyutny-kontrol.txt';
-        document.body.appendChild(link);
-        link.click();
-        link.remove();
-        setTimeout(() => URL.revokeObjectURL(url), 1000);
-        submitStatus.textContent = 'Файл с ответами подготовлен для скачивания.';
-      });
-      document.getElementById('share-answers').addEventListener('click', async () => {
-        if (typeof navigator.share === 'function') {
-          try {
-            await navigator.share({title:'Ответы Дениса — Валютный контроль', text:answersText()});
-            submitStatus.textContent = 'Ответы переданы в выбранное приложение.';
-          } catch (error) {
-            if (error.name === 'AbortError') submitStatus.textContent = 'Передача отменена. Ответы остались на странице.';
-            else await copyText(answersText(), 'Ответы скопированы. Их можно вставить в сообщение.');
-          }
-        } else await copyText(answersText(), 'Ответы скопированы. Их можно вставить в сообщение.');
-      });
-      if (hasSubmitAdapter()) {
-        deliveryNote.textContent = 'Черновик хранится в этом браузере. Ответы сохранятся в закрытой базе и будут доступны разработчику. При необходимости можно также скачать или скопировать ответы.';
-      }
       form.addEventListener('submit', async event => {
         event.preventDefault();
         if (busy || (!config.submitUrl && typeof config.submit !== 'function')) return;
@@ -500,19 +379,13 @@
         } catch (error) {
           saveDraft();
           const explanation = typeof error?.message === 'string' ? ` ${error.message}` : '';
-          submitStatus.textContent = `Не удалось подтвердить сохранение.${explanation} Ответы остались на странице: можно повторить отправку или скачать файл.`;
+          submitStatus.textContent = `Не удалось подтвердить сохранение.${explanation} Ответы остались на странице. Попробуйте отправить ещё раз.`;
         } finally {
           busy = false;
           form.querySelectorAll('.answer-fieldset').forEach(fieldset => { fieldset.disabled = false; });
           updateProgress();
         }
       });
-      document.getElementById('close-dialog').addEventListener('click', () => {
-        if (typeof dialog.close === 'function') dialog.close();
-        else dialog.removeAttribute('open');
-        copyButton.focus();
-      });
-      document.getElementById('print-page').addEventListener('click', () => window.print());
     })();
   </script>
 </body>
