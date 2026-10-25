@@ -36,7 +36,6 @@
     .button.secondary { border-color: var(--line); background: transparent; color: var(--ink); }
     .button.secondary:hover { background: var(--soft); }
     .button svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
-    .copy-status { margin: 12px 0 0; min-height: 24px; color: var(--muted); font-size: 12px; }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
     .draft-bar { position: sticky; top: 0; z-index: 5; display: flex; justify-content: space-between; align-items: center; gap: 10px 20px; flex-wrap: wrap; padding: 13px 0; background: rgb(245 244 238 / .98); border-bottom: 1px solid var(--line); color: var(--muted); font-size: 12px; }
     .draft-bar output { color: var(--ink); font-weight: 650; }
@@ -129,7 +128,7 @@
       .intro { padding-block: 24px 10px; }
       h1 { font-size: 32pt; letter-spacing: -.8px; }
       .lead { max-width: none; font-size: 11pt; }
-      .actions, .copy-status, .contents, .skip, .answer-hint, .answer-actions, .answer-fieldset, .draft-bar, dialog, footer a { display: none !important; }
+      .actions, .contents, .skip, .answer-hint, .answer-actions, .answer-fieldset, .draft-bar, dialog, footer a { display: none !important; }
       .print-answer { display: block; white-space: pre-line; margin-top: 10px; font-size: 10.5pt; color: black; }
       .question-section { padding-top: 24px; }
       h2 { font-size: 20pt; }
@@ -160,16 +159,11 @@
         <p class="lead">Денис, ниже — вопросы по материалам, учебным тестам и обновлениям приложения. Ответы помогут определить, как должна работать следующая версия.</p>
         <p class="lead">Ответьте прямо на странице: выберите подходящие варианты и добавьте пояснения. Если решения пока нет — можно написать «нужен совет». Черновик сохраняется на этом устройстве.</p>
         <div class="actions">
-          <button class="button" type="button" id="copy-questions">
-            <svg aria-hidden="true" viewBox="0 0 20 20"><rect x="7" y="7" width="10" height="11" rx="1.5"/><path d="M12 4V2H2v11h2"/></svg>
-            Скопировать вопросы
-          </button>
           <button class="button secondary" type="button" id="print-page">
             <svg aria-hidden="true" viewBox="0 0 20 20"><path d="M5 7V2h10v5M5 14H2V7h16v7h-3M5 11h10v7H5z"/></svg>
             Печать / PDF
           </button>
         </div>
-        <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
       </section>
       <nav class="contents" aria-label="Темы вопросов" id="questions">
         <a href="#tests"><span class="toc-range">01—06</span><span class="toc-label">Учебные тесты</span></a>
@@ -240,8 +234,7 @@
   <script>
     (() => {
       'use strict';
-      const button = document.getElementById('copy-questions');
-      const status = document.getElementById('copy-status');
+      const copyButton = document.getElementById('copy-answers');
       const dialog = document.getElementById('copy-dialog');
       const manual = document.getElementById('manual-copy');
       const form = document.getElementById('answer-form');
@@ -392,18 +385,11 @@
       });
       form.addEventListener('change', () => { updateProgress(); clearTimeout(saveTimer); saveDraft(); });
       window.addEventListener('pagehide', saveDraft);
-      const questionText = () => {
-        const questions = Array.from(document.querySelectorAll('.question')).map(item =>
-          `${item.dataset.number}. ${item.querySelector('h3').textContent.trim()}\n${item.querySelector('p').textContent.trim()}`
-        );
-        return 'Валютный контроль — вопросы для Дениса\n\n' + questions.join('\n\n') +
-          '\n\nОфициальный раздел рекомендаций FATF: https://www.fatf-gafi.org/en/topics/fatf-recommendations.html';
-      };
       const answersText = () => 'Валютный контроль — ответы Дениса\n\n' + readAnswers().map(answer =>
         `${answer.number}. ${answer.question}\n${answer.answer || 'Ответ пока не указан.'}`).join('\n\n');
       const copyText = async (text, successMessage) => {
         let copied = false;
-        button.disabled = true;
+        copyButton.disabled = true;
         try {
           if (navigator.clipboard && window.isSecureContext) {
             await navigator.clipboard.writeText(text);
@@ -419,11 +405,10 @@
           field.select();
           try { copied = document.execCommand('copy'); } catch (_) { copied = false; }
           field.remove();
-          button.focus();
+          copyButton.focus();
         }
-        button.disabled = false;
+        copyButton.disabled = false;
         if (copied) {
-          status.textContent = successMessage;
           submitStatus.textContent = successMessage;
         } else {
           manual.value = text;
@@ -435,10 +420,9 @@
           }
           manual.focus();
           manual.select();
-          status.textContent = 'Доступно ручное копирование текста.';
+          submitStatus.textContent = 'Доступно ручное копирование текста.';
         }
       };
-      button.addEventListener('click', () => copyText(questionText(), 'Все 12 вопросов скопированы. Их можно вставить в сообщение.'));
       document.getElementById('copy-answers').addEventListener('click', () => copyText(answersText(), 'Ответы скопированы. Теперь их можно вставить в сообщение.'));
       document.getElementById('download-answers').addEventListener('click', () => {
         const url = URL.createObjectURL(new Blob(['\uFEFF' + answersText()], {type:'text/plain;charset=utf-8'}));
@@ -526,7 +510,7 @@
       document.getElementById('close-dialog').addEventListener('click', () => {
         if (typeof dialog.close === 'function') dialog.close();
         else dialog.removeAttribute('open');
-        button.focus();
+        copyButton.focus();
       });
       document.getElementById('print-page').addEventListener('click', () => window.print());
     })();
