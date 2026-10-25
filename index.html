@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#143f3b">
+  <meta name="description" content="Вопросы для согласования следующей версии приложения «Валютный контроль»: учебные тесты, материалы, доступ и обновления.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Вопросы для Дениса · Валютный контроль</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+    :root { color-scheme: light; --ink: #143f3b; --text: #294a43; --muted: #61756c; --paper: #f5f4ee; --line: #d8dfd4; --soft: #e9eee4; --gold: #e6d6a8; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+    body { margin: 0; color: var(--text); background: var(--paper); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    button, textarea, input { font: inherit; }
+    a { color: var(--ink); text-decoration-thickness: 1px; text-underline-offset: 4px; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible, button:focus-visible, textarea:focus-visible, input:focus-visible, summary:focus-visible { outline: 3px solid #8a6415; outline-offset: 5px; }
+    button { cursor: pointer; }
+    .skip { position: absolute; top: -90px; left: 16px; z-index: 10; padding: 10px 18px; background: var(--ink); color: white; }
+    .skip:focus { top: 12px; }
+    .wrap { width: min(100% - 64px, 920px); margin-inline: auto; }
+    .masthead { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 35px; border-bottom: 1px solid var(--line); }
+    .brand { display: flex; align-items: center; gap: 13px; color: var(--ink); text-decoration: none; }
+    .brand-mark { display: grid; place-items: center; width: 42px; height: 42px; border: 1.5px solid var(--ink); border-radius: 50%; font-family: Georgia, "Times New Roman", serif; font-size: 21px; line-height: 1; }
+    .brand-name { font-size: 12px; line-height: 1.4; letter-spacing: 1.6px; font-weight: 750; text-transform: uppercase; }
+    .edition { color: var(--muted); font-size: 12px; letter-spacing: .02em; }
+    .intro { padding-block: 65px 38px; }
+    .eyebrow { margin: 0 0 15px; color: var(--muted); font-size: 11px; line-height: 1.4; letter-spacing: 1.8px; text-transform: uppercase; font-weight: 700; }
+    h1 { margin: 0; color: var(--ink); font-family: Georgia, "Times New Roman", serif; font-weight: 400; font-size: clamp(39px, 6.9vw, 64px); line-height: 1.09; letter-spacing: -1.9px; }
+    .lead { max-width: 650px; margin: 25px 0 0; color: var(--muted); font-size: 18px; line-height: 1.7; }
+    .actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 44px; padding: 10px 18px; border: 1px solid var(--ink); border-radius: 6px; background: var(--ink); color: #fff; font-size: 13px; font-weight: 600; transition: background .15s ease; }
+    .button:hover { background: #24594f; }
+    .button.secondary { border-color: var(--line); background: transparent; color: var(--ink); }
+    .button.secondary:hover { background: var(--soft); }
+    .button svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+    .copy-status { margin: 12px 0 0; min-height: 24px; color: var(--muted); font-size: 12px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    .draft-bar { position: sticky; top: 0; z-index: 5; display: flex; justify-content: space-between; align-items: center; gap: 10px 20px; flex-wrap: wrap; padding: 13px 0; background: rgb(245 244 238 / .98); border-bottom: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+    .draft-bar output { color: var(--ink); font-weight: 650; }
+    .answer-fieldset { margin: 18px 0 0; padding: 0; border: 0; min-width: 0; }
+    .answer-fieldset legend { padding: 0; margin-bottom: 8px; color: var(--ink); font-size: 12px; font-weight: 650; }
+    .answer-fieldset:disabled { opacity: .65; }
+    .choices { display: flex; flex-direction: column; align-items: flex-start; gap: 7px; margin-bottom: 12px; }
+    .choice { display: flex; align-items: flex-start; gap: 9px; min-height: 33px; padding: 4px 0; color: #405e50; font-size: 14px; line-height: 1.55; cursor: pointer; }
+    .choice input { width: 17px; height: 17px; margin: 3px 0 0; flex: 0 0 auto; accent-color: var(--ink); }
+    .answer-label { display: block; margin-bottom: 6px; color: var(--muted); font-size: 12px; }
+    .answer-text { display: block; width: 100%; min-height: 86px; resize: vertical; padding: 12px 13px; border: 1px solid #b7c3b6; border-radius: 6px; background: #fffef9; color: var(--text); font-size: 14px; line-height: 1.65; }
+    .answer-text::placeholder { color: #7c8a7e; opacity: 1; }
+    .question.has-answer .question-number { color: var(--ink); }
+    .question.is-missing .answer-fieldset { border-left: 3px solid #9e501b; padding-left: 12px; }
+    .question-error { margin: 7px 0 0 !important; color: #914715 !important; font-size: 12px !important; }
+    .print-answer { display: none; }
+    .answer-actions { margin-top: 35px; padding: 27px 28px; background: var(--ink); color: white; border-radius: 8px; }
+    .answer-actions h2 { color: white; font-size: 28px; }
+    .answer-actions p { margin: 12px 0 0; color: #c3d3c6; font-size: 14px; line-height: 1.7; }
+    .answer-actions .actions { margin-top: 20px; }
+    .answer-actions .button { background: var(--gold); color: var(--ink); border-color: var(--gold); }
+    .answer-actions .button:hover { background: #f0e2bf; }
+    .answer-actions .button.secondary { color: white; background: transparent; border-color: #739082; }
+    .answer-actions .button.secondary:hover { background: #23574b; }
+    .button:disabled { opacity: .5; cursor: not-allowed; }
+    .export-actions { display: flex; gap: 16px 20px; flex-wrap: wrap; margin-top: 15px; }
+    .text-button { padding: 4px 0; border: 0; background: transparent; color: #d3dfd4; text-decoration: underline; text-underline-offset: 4px; font-size: 12px; }
+    .submit-status { min-height: 22px; }
+    .contents { display: flex; flex-wrap: wrap; gap: 10px 26px; padding-block: 20px; border-block: 1px solid var(--line); }
+    .contents a { display: inline-flex; align-items: baseline; gap: 9px; font-size: 13px; text-decoration: none; }
+    .contents a:hover .toc-label { text-decoration: underline; text-underline-offset: 4px; }
+    .toc-range { color: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+    .question-section { padding-top: 49px; }
+    .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; margin-bottom: 9px; }
+    h2 { margin: 0; color: var(--ink); font-family: Georgia, "Times New Roman", serif; font-size: 31px; line-height: 1.25; letter-spacing: -.6px; font-weight: 400; }
+    .section-count { color: var(--muted); font-size: 11px; white-space: nowrap; }
+    .section-note { max-width: 700px; margin: 0 0 12px; color: var(--muted); font-size: 14px; line-height: 1.6; }
+    .questions { list-style: none; margin: 0; padding: 0; }
+    .question { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 14px; padding-block: 25px 26px; border-bottom: 1px solid var(--line); break-inside: avoid; }
+    .question-number { padding-top: 2px; color: #778879; font-family: Georgia, "Times New Roman", serif; font-size: 24px; line-height: 1.3; font-variant-numeric: tabular-nums; }
+    h3 { max-width: 700px; margin: 0; color: var(--ink); font-size: 18px; line-height: 1.5; font-weight: 650; letter-spacing: -.15px; }
+    .question p { max-width: 700px; margin: 9px 0 0; color: var(--muted); font-size: 15px; line-height: 1.75; }
+    .answer-hint { margin-block: 43px 0; padding: 24px 28px; border-left: 3px solid #abb89e; background: var(--soft); }
+    .answer-hint h2 { font-family: inherit; font-size: 16px; font-weight: 650; letter-spacing: 0; }
+    .answer-hint p { margin: 9px 0 0; color: #4a6255; font-size: 14px; line-height: 1.75; }
+    footer { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-top: 50px; padding-block: 24px 36px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; }
+    footer a { color: var(--muted); }
+    dialog { width: min(100% - 32px, 670px); max-height: 85vh; padding: 25px; border: 1px solid var(--line); border-radius: 10px; background: var(--paper); color: var(--text); }
+    dialog::backdrop { background: rgb(15 38 32 / .55); }
+    dialog h2 { font-size: 25px; }
+    dialog p { color: var(--muted); font-size: 14px; }
+    dialog textarea { display: block; width: 100%; min-height: 230px; max-height: 45vh; resize: vertical; padding: 12px; border: 1px solid #84968b; border-radius: 4px; background: #fff; color: var(--text); font-size: 14px; line-height: 1.6; }
+    dialog .button { margin-top: 16px; }
+    [hidden] { display: none !important; }
+    @media (max-width: 600px) {
+      .wrap { width: min(100% - 36px, 920px); }
+      .masthead { padding-block: 23px; gap: 12px; }
+      .brand { gap: 10px; }
+      .brand-name { font-size: 10px; letter-spacing: 1.1px; }
+      .brand-mark { width: 35px; height: 35px; font-size: 18px; flex-shrink: 0; }
+      .edition { max-width: 85px; text-align: right; font-size: 10px; line-height: 1.5; }
+      .intro { padding-block: 43px 25px; }
+      h1 { letter-spacing: -1.2px; }
+      .lead { font-size: 16px; margin-top: 21px; }
+      .actions { margin-top: 24px; gap: 9px; }
+      .button { font-size: 12px; padding-inline: 14px; }
+      .contents { gap: 12px 20px; }
+      .contents a { font-size: 12px; }
+      .question-section { padding-top: 36px; }
+      .section-heading { display: block; }
+      h2 { font-size: 28px; }
+      .section-count { display: block; margin-top: 6px; }
+      .section-note { margin-top: 9px; font-size: 13px; }
+      .question { grid-template-columns: 32px minmax(0, 1fr); gap: 9px; padding-block: 23px; }
+      .question-number { font-size: 21px; }
+      h3 { font-size: 17px; line-height: 1.5; }
+      .question p { font-size: 14px; line-height: 1.7; }
+      .answer-text, dialog textarea { font-size: 16px; }
+      .answer-hint { margin-top: 33px; padding: 20px; }
+      .draft-bar { font-size: 11px; padding-block: 11px; }
+      .answer-actions { padding: 23px 20px; }
+      .answer-actions h2 { font-size: 26px; }
+      footer { margin-top: 35px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; } }
+    @media print {
+      body { background: white; color: black; font-size: 11pt; line-height: 1.5; }
+      .wrap { width: 100%; max-width: none; }
+      .masthead { padding-block: 0 16px; }
+      .intro { padding-block: 24px 10px; }
+      h1 { font-size: 32pt; letter-spacing: -.8px; }
+      .lead { max-width: none; font-size: 11pt; }
+      .actions, .copy-status, .contents, .skip, .answer-hint, .answer-actions, .answer-fieldset, .draft-bar, dialog, footer a { display: none !important; }
+      .print-answer { display: block; white-space: pre-line; margin-top: 10px; font-size: 10.5pt; color: black; }
+      .question-section { padding-top: 24px; }
+      h2 { font-size: 20pt; }
+      h3 { font-size: 12pt; }
+      .question { padding-block: 15px; grid-template-columns: 35px minmax(0, 1fr); }
+      .question p { font-size: 10.5pt; }
+      .question-number { font-size: 17pt; }
+      footer { padding-bottom: 0; margin-top: 25px; }
+      a { color: inherit; }
+      @page { margin: 18mm; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#questions">Перейти к вопросам</a>
+  <div class="wrap">
+    <header class="masthead">
+      <a class="brand" href="#top" aria-label="Валютный контроль — к началу страницы">
+        <span class="brand-mark" aria-hidden="true">ВК</span>
+        <span class="brand-name">Валютный<br>контроль</span>
+      </a>
+      <span class="edition">Обсуждение<br>следующей версии</span>
+    </header>
+    <main id="top">
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">Вопросы для Дениса</p>
+        <h1 id="page-title">Согласуем<br>следующую версию</h1>
+        <p class="lead">Денис, ниже — вопросы по материалам, учебным тестам и обновлениям приложения. Ответы помогут определить, как должна работать следующая версия.</p>
+        <p class="lead">Ответьте прямо на странице: выберите подходящие варианты и добавьте пояснения. Если решения пока нет — можно написать «нужен совет». Черновик сохраняется на этом устройстве.</p>
+        <div class="actions">
+          <button class="button" type="button" id="copy-questions">
+            <svg aria-hidden="true" viewBox="0 0 20 20"><rect x="7" y="7" width="10" height="11" rx="1.5"/><path d="M12 4V2H2v11h2"/></svg>
+            Скопировать вопросы
+          </button>
+          <button class="button secondary" type="button" id="print-page">
+            <svg aria-hidden="true" viewBox="0 0 20 20"><path d="M5 7V2h10v5M5 14H2V7h16v7h-3M5 11h10v7H5z"/></svg>
+            Печать / PDF
+          </button>
+        </div>
+        <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+      </section>
+      <nav class="contents" aria-label="Темы вопросов" id="questions">
+        <a href="#tests"><span class="toc-range">01—06</span><span class="toc-label">Учебные тесты</span></a>
+        <a href="#students"><span class="toc-range">07—08</span><span class="toc-label">Студенты и доступ</span></a>
+        <a href="#materials"><span class="toc-range">09—12</span><span class="toc-label">Материалы и обновления</span></a>
+      </nav>
+      <div class="draft-bar" aria-label="Состояние заполнения"><output id="answer-progress" aria-live="polite">Ответы есть: 0 из 12</output><span id="draft-status" role="status" aria-live="polite">Черновик пока пуст</span></div>
+      <noscript><p>Для заполнения и отправки ответов включите JavaScript в браузере. Читать вопросы можно и без него.</p></noscript>
+      <form id="answer-form" novalidate>
+      <section class="question-section" id="tests" aria-labelledby="tests-heading">
+        <div class="section-heading"><h2 id="tests-heading">Учебные тесты</h2><span class="section-count">Вопросы 01—06</span></div>
+        <p class="section-note">Темы, содержание заданий и правила прохождения.</p>
+        <ol class="questions" role="list">
+          <li class="question" id="q1" data-number="1"><span class="question-number" aria-hidden="true">01</span><div><h3>По каким темам нужны отдельные тесты?</h3><p>По валютному контролю, бартеру, перемещению наличных денежных средств и денежных инструментов через границу, ПОД/ФТ — по всем четырём? Нужны ли тесты по другим разделам?</p></div></li>
+          <li class="question" id="q2" data-number="2"><span class="question-number" aria-hidden="true">02</span><div><h3>Сколько вопросов нужно по каждой теме?</h3><p>«30 вопросов» — это весь тест или количество вопросов в одной попытке, случайно выбранных из большего банка? Какой объём нужен для остальных тем?</p></div></li>
+          <li class="question" id="q3" data-number="3"><span class="question-number" aria-hidden="true">03</span><div><h3>Кто подготовит и утвердит вопросы, правильные ответы и пояснения?</h3><p>Вы предоставите готовые материалы или мы подготовим черновик для вашей проверки? Кто будет проверять и обновлять задания при изменении законодательства?</p></div></li>
+          <li class="question" id="q4" data-number="4"><span class="question-number" aria-hidden="true">04</span><div><h3>Какие задания нужны?</h3><p>Один правильный ответ, несколько правильных ответов, «верно/неверно», практические ситуации или свободный текст?</p></div></li>
+          <li class="question" id="q5" data-number="5"><span class="question-number" aria-hidden="true">05</span><div><h3>Это самопроверка или контроль знаний для преподавателя?</h3><p>Когда показывать правильные ответы и объяснения: сразу после каждого вопроса или после завершения теста?</p></div></li>
+          <li class="question" id="q6" data-number="6"><span class="question-number" aria-hidden="true">06</span><div><h3>Какие правила прохождения тестов?</h3><p>Нужны ли таймер, проходной балл, ограничение количества попыток и случайный порядок вопросов и вариантов ответа?</p></div></li>
+        </ol>
+      </section>
+      <section class="question-section" id="students" aria-labelledby="students-heading">
+        <div class="section-heading"><h2 id="students-heading">Студенты и доступ</h2><span class="section-count">Вопросы 07—08</span></div>
+        <p class="section-note">Кто пользуется приложением и кому доступны результаты.</p>
+        <ol class="questions" start="7" role="list">
+          <li class="question" id="q7" data-number="7"><span class="question-number" aria-hidden="true">07</span><div><h3>Нужно ли вам видеть результаты студентов?</h3><p>Если да — нужны ли ФИО, группа, история попыток и выгрузка отчёта? Или результат остаётся только у студента на его телефоне?</p></div></li>
+          <li class="question" id="q8" data-number="8"><span class="question-number" aria-hidden="true">08</span><div><h3>Приложение открыто для всех или только для ваших студентов?</h3><p>Нужны ли регистрация и вход в учётную запись?</p></div></li>
+        </ol>
+      </section>
+      <section class="question-section" id="materials" aria-labelledby="materials-heading">
+        <div class="section-heading"><h2 id="materials-heading">Материалы и обновления</h2><span class="section-count">Вопросы 09—12</span></div>
+        <p class="section-note">Загрузка документов, доступ без интернета и публикация новых редакций.</p>
+        <ol class="questions" start="9" role="list">
+          <li class="question" id="q9" data-number="9"><span class="question-number" aria-hidden="true">09</span><div><h3>Вы хотите самостоятельно менять также тесты или только документы?</h3><p>Загружать и редактировать материалы удобнее с компьютера, телефона или обоих? Опубликованные изменения должны автоматически появляться у всех пользователей?</p></div></li>
+          <li class="question" id="q10" data-number="10"><span class="question-number" aria-hidden="true">10</span><div><h3>Какие материалы должны быть доступны без интернета?</h3><p>Нужны полные PDF/DOCX или достаточно ссылок на сайты? Шаблон акта проверки нужно только скачивать или ещё заполнять внутри приложения?</p></div></li>
+          <li class="question" id="q11" data-number="11"><span class="question-number" aria-hidden="true">11</span><div><h3>Какую версию 40 рекомендаций FATF размещаем?</h3><p>Оригинал, русский перевод или оба? Кто утверждает перевод и редакцию? <a href="https://www.fatf-gafi.org/en/topics/fatf-recommendations.html" target="_blank" rel="noopener noreferrer">Официальный раздел рекомендаций FATF</a>.</p></div></li>
+          <li class="question" id="q12" data-number="12"><span class="question-number" aria-hidden="true">12</span><div><h3>Какой первоначальный перечень документов вы предоставите по каждому разделу?</h3><p>В том числе по валютному контролю и ответственности, бартеру, перемещению наличных, ПОД/ФТ, рекомендациям ФНС и ФТС и шаблонам. Нужно ли сохранять прежние редакции, а новые публиковать после вашего подтверждения?</p></div></li>
+        </ol>
+      </section>
+      <section class="answer-actions" aria-labelledby="answers-heading">
+        <h2 id="answers-heading">Ваши ответы</h2>
+        <p id="delivery-note">Черновик хранится в этом браузере. Ответы сохранятся в закрытой базе и будут доступны разработчику. При необходимости можно также скачать или скопировать ответы.</p>
+        <div class="actions">
+          <button class="button" type="submit" id="submit-answers" disabled>Отправить ответы</button>
+          <button class="button secondary" type="button" id="share-answers">Поделиться ответами</button>
+        </div>
+        <div class="export-actions">
+          <button class="text-button" type="button" id="copy-answers">Скопировать ответы</button>
+          <button class="text-button" type="button" id="download-answers">Скачать .txt</button>
+        </div>
+        <p class="submit-status" id="submit-status" role="status" aria-live="polite"></p>
+      </section>
+      </form>
+      <aside class="answer-hint" aria-labelledby="offline-heading">
+        <h2 id="offline-heading">От чего зависит необходимость сервера</h2>
+        <p>Справочник, документы и тесты можно реализовать для работы на телефоне без постоянного интернета. Общие обновления материалов потребуют онлайн-каталога, а учёт студентов и результаты для преподавателя — общей базы данных. Ответы на вопросы 7–10 помогут выбрать подходящий вариант.</p>
+      </aside>
+    </main>
+    <footer><span>Валютный контроль · Вопросы для согласования</span><a href="#top">К началу ↑</a></footer>
+  </div>
+  <dialog id="copy-dialog" aria-labelledby="copy-dialog-title">
+    <h2 id="copy-dialog-title">Скопировать вручную</h2>
+    <p id="manual-help">Браузер не разрешил автоматическое копирование. Выделите текст ниже и скопируйте его обычным способом.</p>
+    <textarea id="manual-copy" readonly aria-label="Текст для копирования" aria-describedby="manual-help"></textarea>
+    <button class="button secondary" type="button" id="close-dialog">Закрыть</button>
+  </dialog>
+  <script src="form-config.js"></script>
+  <script>
+    (() => {
+      'use strict';
+      const button = document.getElementById('copy-questions');
+      const status = document.getElementById('copy-status');
+      const dialog = document.getElementById('copy-dialog');
+      const manual = document.getElementById('manual-copy');
+      const form = document.getElementById('answer-form');
+      const configs = [
+        {type:'checkbox', options:['Валютный контроль', 'Бартер', 'Наличные и денежные инструменты через границу', 'ПОД/ФТ']},
+        {type:'radio', options:['30 вопросов — весь тест', '30 вопросов выбираются из большего банка', 'Пока не определено']},
+        {type:'radio', options:['Предоставлю готовые вопросы и ответы', 'Нужен черновик от разработчика для моей проверки', 'Подготовим совместно']},
+        {type:'checkbox', options:['Один правильный ответ', 'Несколько правильных ответов', 'Верно / неверно', 'Практические ситуации', 'Свободный текст']},
+        {type:'radio', options:['Самопроверка', 'Контроль знаний для преподавателя', 'Оба режима']},
+        {type:'checkbox', options:['Таймер', 'Проходной балл', 'Ограничение попыток', 'Случайный порядок вопросов и ответов']},
+        {type:'radio', options:['Результаты остаются только у студента', 'Преподаватель должен видеть результаты', 'Пока не определено']},
+        {type:'radio', options:['Открыто для всех без регистрации', 'Только для студентов с учётными записями', 'Нужен совет']},
+        {type:'checkbox', options:['Самостоятельно меняю документы', 'Самостоятельно меняю тесты', 'Изменения автоматически доступны всем пользователям']},
+        {type:'checkbox', options:['Полные PDF без интернета', 'Файлы DOCX для скачивания', 'Ссылки на официальные сайты', 'Шаблон только скачивать', 'Шаблон заполнять внутри приложения']},
+        {type:'radio', options:['Оригинал рекомендаций FATF', 'Русский перевод', 'Оригинал и русский перевод', 'Пока не определено']},
+        {type:'checkbox', options:['Сохранять предыдущие редакции', 'Новые редакции публиковать после моего подтверждения']}
+      ];
+      const questionNodes = Array.from(document.querySelectorAll('.question'));
+      questionNodes.forEach((item, index) => {
+        const heading = item.querySelector('h3');
+        heading.id = `${item.id}-title`;
+        const fieldset = document.createElement('fieldset');
+        fieldset.className = 'answer-fieldset';
+        fieldset.setAttribute('aria-labelledby', heading.id);
+        const legend = document.createElement('legend');
+        legend.textContent = 'Ваш ответ';
+        fieldset.appendChild(legend);
+        const choices = document.createElement('div');
+        choices.className = 'choices';
+        configs[index].options.forEach((option, optionIndex) => {
+          const label = document.createElement('label');
+          label.className = 'choice';
+          const input = document.createElement('input');
+          input.type = configs[index].type;
+          input.name = `q${index + 1}-choice`;
+          input.value = option;
+          input.id = `q${index + 1}-option-${optionIndex + 1}`;
+          const text = document.createElement('span');
+          text.textContent = option;
+          label.append(input, text);
+          choices.appendChild(label);
+        });
+        fieldset.appendChild(choices);
+        const textLabel = document.createElement('label');
+        textLabel.className = 'answer-label';
+        textLabel.htmlFor = `q${index + 1}-comment`;
+        textLabel.textContent = index === 11 ? 'Перечень документов и пояснения' : 'Комментарий или свой вариант ответа';
+        const textarea = document.createElement('textarea');
+        textarea.className = 'answer-text';
+        textarea.name = `q${index + 1}-comment`;
+        textarea.id = textLabel.htmlFor;
+        textarea.rows = 2;
+        textarea.placeholder = index === 11 ? 'Перечислите документы или напишите, как удобнее передать подборку.' : 'Уточните ответ. Если пока не решили, можно написать «нужен совет».';
+        const error = document.createElement('p');
+        error.className = 'question-error';
+        error.id = `q${index + 1}-error`;
+        error.textContent = 'Выберите вариант или напишите короткий ответ.';
+        error.hidden = true;
+        textarea.setAttribute('aria-describedby', error.id);
+        const printAnswer = document.createElement('div');
+        printAnswer.className = 'print-answer';
+        fieldset.append(textLabel, textarea, error);
+        item.lastElementChild.append(fieldset, printAnswer);
+      });
+      const storageKey = 'denis-currency-control-questions:v1';
+      const progress = document.getElementById('answer-progress');
+      const draftStatus = document.getElementById('draft-status');
+      const submitStatus = document.getElementById('submit-status');
+      const submitButton = document.getElementById('submit-answers');
+      const deliveryNote = document.getElementById('delivery-note');
+      const config = window.DENIS_QUESTIONS_CONFIG || {};
+      let saveTimer;
+      let storageWorking = true;
+      let busy = false;
+      let submittedFingerprint = '';
+      let requestId = '';
+      let requestFingerprint = '';
+      const hasSubmitAdapter = () => typeof config.submit === 'function' || Boolean(config.submitUrl);
+      const updateSubmitAvailability = count => {
+        submitButton.disabled = busy || !hasSubmitAdapter() || (config.requireAll !== false && count < 12);
+      };
+      const readAnswers = () => questionNodes.map(item => {
+        const selected = Array.from(item.querySelectorAll('input:checked')).map(input => input.value);
+        const comment = item.querySelector('textarea').value.trim();
+        return {number:Number(item.dataset.number), question:item.querySelector('h3').textContent.trim(),
+          answer:[...selected, ...(comment ? [comment] : [])].join('\n')};
+      });
+      const updateProgress = () => {
+        const answers = readAnswers();
+        const count = answers.filter(answer => answer.answer).length;
+        const progressText = `Ответы есть: ${count} из 12`;
+        if (progress.textContent !== progressText) progress.textContent = progressText;
+        updateSubmitAvailability(count);
+        questionNodes.forEach((item, index) => {
+          item.classList.toggle('has-answer', Boolean(answers[index].answer));
+          item.querySelector('.print-answer').textContent = answers[index].answer ? `Ответ:\n${answers[index].answer}` : 'Ответ пока не указан.';
+          if (answers[index].answer) {
+            item.classList.remove('is-missing');
+            item.querySelector('.question-error').hidden = true;
+            item.querySelector('textarea').removeAttribute('aria-invalid');
+          }
+        });
+        return count;
+      };
+      const snapshot = () => Array.from(form.querySelectorAll('input, textarea')).map(control =>
+        ({name:control.name, type:control.type, value:control.value, checked:control.checked || false}));
+      const saveDraft = () => {
+        try {
+          localStorage.setItem(storageKey, JSON.stringify({version:1, controls:snapshot(),
+            delivery:{requestId, requestFingerprint, submittedFingerprint}}));
+          storageWorking = true;
+          draftStatus.textContent = updateProgress() ? 'Черновик сохранён на этом устройстве' : 'Черновик пока пуст';
+        } catch (_) {
+          storageWorking = false;
+          draftStatus.textContent = 'Браузер не сохранил черновик. Скопируйте или скачайте ответы перед закрытием.';
+        }
+      };
+      try {
+        const raw = localStorage.getItem(storageKey);
+        if (raw) {
+          const saved = JSON.parse(raw);
+          if (saved.version === 1 && Array.isArray(saved.controls)) {
+            Array.from(form.querySelectorAll('input, textarea')).forEach(control => {
+              const entry = saved.controls.find(item => item.name === control.name &&
+                (control.type === 'textarea' || item.value === control.value));
+              if (entry) {
+                if (control.type === 'radio' || control.type === 'checkbox') control.checked = Boolean(entry.checked);
+                else control.value = String(entry.value || '');
+              }
+            });
+            if (saved.delivery && typeof saved.delivery === 'object') {
+              requestId = typeof saved.delivery.requestId === 'string' ? saved.delivery.requestId : '';
+              requestFingerprint = typeof saved.delivery.requestFingerprint === 'string' ? saved.delivery.requestFingerprint : '';
+              submittedFingerprint = typeof saved.delivery.submittedFingerprint === 'string' ? saved.delivery.submittedFingerprint : '';
+            }
+          }
+        }
+      } catch (_) {
+        storageWorking = false;
+        draftStatus.textContent = 'Автосохранение в этом браузере недоступно. Можно скачать ответы файлом.';
+      }
+      if (updateProgress() && storageWorking) draftStatus.textContent = 'Черновик восстановлен на этом устройстве';
+      form.addEventListener('input', () => {
+        updateProgress();
+        if (storageWorking) draftStatus.textContent = 'Сохраняем черновик…';
+        clearTimeout(saveTimer);
+        saveTimer = setTimeout(saveDraft, 400);
+      });
+      form.addEventListener('change', () => { updateProgress(); clearTimeout(saveTimer); saveDraft(); });
+      window.addEventListener('pagehide', saveDraft);
+      const questionText = () => {
+        const questions = Array.from(document.querySelectorAll('.question')).map(item =>
+          `${item.dataset.number}. ${item.querySelector('h3').textContent.trim()}\n${item.querySelector('p').textContent.trim()}`
+        );
+        return 'Валютный контроль — вопросы для Дениса\n\n' + questions.join('\n\n') +
+          '\n\nОфициальный раздел рекомендаций FATF: https://www.fatf-gafi.org/en/topics/fatf-recommendations.html';
+      };
+      const answersText = () => 'Валютный контроль — ответы Дениса\n\n' + readAnswers().map(answer =>
+        `${answer.number}. ${answer.question}\n${answer.answer || 'Ответ пока не указан.'}`).join('\n\n');
+      const copyText = async (text, successMessage) => {
+        let copied = false;
+        button.disabled = true;
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(text);
+            copied = true;
+          }
+        } catch (_) { /* Continue with a browser-local fallback. */ }
+        if (!copied) {
+          const field = document.createElement('textarea');
+          field.value = text;
+          field.setAttribute('readonly', '');
+          field.style.cssText = 'position:fixed;left:-9999px;top:0;';
+          document.body.appendChild(field);
+          field.select();
+          try { copied = document.execCommand('copy'); } catch (_) { copied = false; }
+          field.remove();
+          button.focus();
+        }
+        button.disabled = false;
+        if (copied) {
+          status.textContent = successMessage;
+          submitStatus.textContent = successMessage;
+        } else {
+          manual.value = text;
+          if (typeof dialog.showModal === 'function') {
+            dialog.showModal();
+          } else {
+            dialog.setAttribute('open', '');
+            dialog.scrollIntoView({ block: 'center' });
+          }
+          manual.focus();
+          manual.select();
+          status.textContent = 'Доступно ручное копирование текста.';
+        }
+      };
+      button.addEventListener('click', () => copyText(questionText(), 'Все 12 вопросов скопированы. Их можно вставить в сообщение.'));
+      document.getElementById('copy-answers').addEventListener('click', () => copyText(answersText(), 'Ответы скопированы. Теперь их можно вставить в сообщение.'));
+      document.getElementById('download-answers').addEventListener('click', () => {
+        const url = URL.createObjectURL(new Blob(['\uFEFF' + answersText()], {type:'text/plain;charset=utf-8'}));
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'otvety-denisa-valyutny-kontrol.txt';
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+        submitStatus.textContent = 'Файл с ответами подготовлен для скачивания.';
+      });
+      document.getElementById('share-answers').addEventListener('click', async () => {
+        if (typeof navigator.share === 'function') {
+          try {
+            await navigator.share({title:'Ответы Дениса — Валютный контроль', text:answersText()});
+            submitStatus.textContent = 'Ответы переданы в выбранное приложение.';
+          } catch (error) {
+            if (error.name === 'AbortError') submitStatus.textContent = 'Передача отменена. Ответы остались на странице.';
+            else await copyText(answersText(), 'Ответы скопированы. Их можно вставить в сообщение.');
+          }
+        } else await copyText(answersText(), 'Ответы скопированы. Их можно вставить в сообщение.');
+      });
+      if (hasSubmitAdapter()) {
+        deliveryNote.textContent = 'Черновик хранится в этом браузере. Ответы сохранятся в закрытой базе и будут доступны разработчику. При необходимости можно также скачать или скопировать ответы.';
+      }
+      form.addEventListener('submit', async event => {
+        event.preventDefault();
+        if (busy || (!config.submitUrl && typeof config.submit !== 'function')) return;
+        const answers = readAnswers();
+        if (config.requireAll !== false) {
+          const missing = questionNodes.filter((item, index) => !answers[index].answer);
+          missing.forEach(item => {
+            item.classList.add('is-missing');
+            item.querySelector('.question-error').hidden = false;
+            item.querySelector('textarea').setAttribute('aria-invalid', 'true');
+          });
+          if (missing.length) {
+            submitStatus.textContent = `Осталось ответить на ${missing.length} из 12 вопросов. Можно написать «нужен совет».`;
+            missing[0].querySelector('input, textarea').focus();
+            return;
+          }
+        }
+        const fingerprint = JSON.stringify(answers);
+        if (fingerprint === submittedFingerprint) {
+          submitStatus.textContent = 'Эти ответы уже сохранены. Можно изменить их и отправить новую версию.';
+          return;
+        }
+        if (fingerprint !== requestFingerprint) {
+          requestFingerprint = fingerprint;
+          requestId = typeof crypto.randomUUID === 'function' ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+        }
+        const payload = {version:1, requestId, submittedAt:new Date().toISOString(), answers};
+        busy = true;
+        submitButton.disabled = true;
+        form.querySelectorAll('.answer-fieldset').forEach(fieldset => { fieldset.disabled = true; });
+        saveDraft();
+        submitStatus.textContent = 'Сохраняем ответы…';
+        try {
+          let result;
+          if (typeof config.submit === 'function') result = await config.submit(payload);
+          else {
+            const controller = new AbortController();
+            const timeout = setTimeout(() => controller.abort(), 25000);
+            try {
+              const response = await fetch(config.submitUrl, {method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'}, body:JSON.stringify(payload), signal:controller.signal});
+              if (!response.ok) throw new Error('HTTP ' + response.status);
+              result = await response.json();
+            } finally { clearTimeout(timeout); }
+          }
+          if (!result || result.ok !== true) throw new Error('No confirmed receipt');
+          submittedFingerprint = fingerprint;
+          saveDraft();
+          submitStatus.textContent = 'Спасибо! Ответы сохранены. Можно закрыть страницу.';
+        } catch (error) {
+          saveDraft();
+          const explanation = typeof error?.message === 'string' ? ` ${error.message}` : '';
+          submitStatus.textContent = `Не удалось подтвердить сохранение.${explanation} Ответы остались на странице: можно повторить отправку или скачать файл.`;
+        } finally {
+          busy = false;
+          form.querySelectorAll('.answer-fieldset').forEach(fieldset => { fieldset.disabled = false; });
+          updateProgress();
+        }
+      });
+      document.getElementById('close-dialog').addEventListener('click', () => {
+        if (typeof dialog.close === 'function') dialog.close();
+        else dialog.removeAttribute('open');
+        button.focus();
+      });
+      document.getElementById('print-page').addEventListener('click', () => window.print());
+    })();
+  </script>
+</body>
+</html>
