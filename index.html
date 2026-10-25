@@ -113,7 +113,7 @@
             <button class="retry" type="button" id="retry-button" hidden>Повторить подключение</button>
           </section>
           <div class="wizard-controls"><button class="button secondary" type="button" id="previous-button" disabled>Назад</button><button class="button" type="submit" id="next-button" disabled>Далее</button></div>
-          <p class="privacy" id="draft-note">Ответы будут доступны разработчику. Черновик на устройстве помогает продолжить при потере связи.</p>
+          <p class="privacy" id="draft-note" hidden></p>
         </form>
       </div>
       <section class="success" id="success" aria-labelledby="success-title" hidden>
@@ -169,7 +169,7 @@
       return draft;
     };
     const setStatus = (text,kind='') => { ui.status.textContent=text;ui.status.dataset.kind=kind; };
-    const storageNote = () => { ui.draft.textContent = state.storageWorking ? 'Ответы доступны разработчику. Черновик сохраняется на этом устройстве.' : 'Браузер не сохранил локальный черновик. Дождитесь подтверждения сервера перед закрытием страницы.'; };
+    const storageNote = () => { ui.draft.hidden = state.storageWorking; ui.draft.textContent = state.storageWorking ? '' : 'Браузер не сохранил локальный черновик. Дождитесь подтверждения сервера перед закрытием страницы.'; };
     const persist = () => {
       if (!state.sessionId) return;
       try {
